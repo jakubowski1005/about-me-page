@@ -6,83 +6,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Artur Jakubowski</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="testtest.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
         crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </head>
 
-<body id="top">
+<body>
 
-    <!--  TOP -->
+    <!-- NAVBAR -->
 
-    <div class="top">
-        <ul class="nav">
-            <li style="float: left"><a href="#top" id="main"><strong>Artur Jakubowski</strong></a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+
+    <div class="navBar" id="mainNavBar">
+        <a href="#top" id="main"><strong>Artur Jakubowski</strong></a>
+        <a href="#contact">Contact</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="javascript:void(0);" class="icon" onClick="openDrawerMenu()">&#9776;</a>
     </div>
+
+
 
     <!--  CARD -->
 
-    <div class="background-image">
 
+    <div class="card-container">
 
-        <div class="card">
-            <div class="card-photo">
+        <div class="card-bg1 item">
 
+            <div class="card item">
+                <div class="card-photo card-item">
+                    <img src="avatar.png" alt="Photography of mine"></img>
+                </div>
+                <div class="card-text card-item">
+                    <h1>Artur Jakubowski</h1>
+                    <h2>Web Developer</h2>
+                    <p><span class="bold">Phone:</span> <br />
+                        555 666 777
+                    </p>
+                    <p>
+                        <span class="bold">E-mail:</span> <br />
+                        jakubowski1005@gmail.com
+                    </p>
+                    <p>
+                        <span class="bold">Address:</span> <br />
+                        Piękna 62ac <br />
+                        50-505 Wrocław
+                    </p>
+                </div>
             </div>
-            <div class="card-text">
 
-                <h1>Artur Jakubowski</h1>
-                <h2>Web Developer</h2>
-                <p><span class="bold">Phone:</span> <br />
-                    555 666 777
-                </p>
-                <p>
-                    <span class="bold">E-mail:</span> <br />
-                    jakubowski1005@gmail.com
-                </p>
-                <p>
-                    <span class="bold">Address:</span> <br />
-                    Piękna 62ac <br />
-                    50-505 Wrocław
-                </p>
-            </div>
+        </div>
+
+        <div class="card-bg2 item">
+
         </div>
 
     </div>
 
-    <div class="background-color">
-
-    </div>
-
-
-
     <!--  PROJECTS -->
-
-    <div class="projects" id="projects">
+    <span class="anchor-span" id="projects"> </span>
+    <div class="projects">
         <h2>Projects</h2>
+
+        <div class="projects-container">
+            <div class="projects-row">
+                <div class="projects-column icon carrot">
+                    <i class="fas fa-carrot"></i>
+                </div>
+                <div class="projects-column">
+                    <div class="projects-column-text">
+                        <h3>Lorem</h3>
+                        <p> This paragraph describes project named "Lorem".</p>
+                        <ul>Used technologies:
+                            <li>ipsum</li>
+                            <li>ipsum</li>
+                            <li>ipsum</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-container">
+                <div class="projects-row row2">
+                    <div class="projects-column">
+                        <div class="projects-column-text">
+                            <h3>Ipsum</h3>
+                            <p> This paragraph describes project named "Ipsum".</p>
+                            <ul>Used technologies:
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="projects-column icon gem">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- EDUCATION  -->
 
-    <div class="education" id="education">
+    <span class="anchor-span" id="education"> </span>
+    <div class="education">
         <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-row">
+                <div class="education-column date">
+                    <p>10.2016 - present<br><br>
+                        Bechelor's Degree</p>
+                </div>
+                <div class="education-column name">
+                    <p>
+
+                        Wroclaw University of Science and Technology <br><br>
+                        Faculty of Fundamental Problems od Technology <br><br>
+                        Biomedical Engineering
+
+                    </p>
+                </div>
+            </div>
+            <div class="education-row">
+                <div class="education-column date">
+                    <p>09.2013 - 05.2016<br><br>
+                        High School</p>
+                </div>
+                <div class="education-column name">
+                    <p>
+
+                        <span>Sniadeccy Brothers High School in Zgorzelec</span>
+
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--  CONTACT -->
-
-    <div class="contact" id="contact">
+    <span class="anchor-span" id="contact"> </span>
+    <div class="contact">
         <h2>Contact</h2>
         <div class="icon-box">
-            <a href="www.facebook.pl"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-slack"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"></a><i class="fab fa-linkedin-in"></i></a>
+            <div class="icon-item"> <a href="https://slack.com/" target="_blank"><i class="fab fa-slack"></i></a>
+            </div>
+            <div class="icon-item"> <a href="https://github.com/jakubowski1005" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="icon-item"><a href="http://www.facebook.pl/" target="_blank"> <i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="icon-item"> <a href="http://www.linkedin.pl/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 
@@ -93,5 +169,3 @@
     </div>
 
 </body>
-
-</html>

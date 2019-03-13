@@ -5,107 +5,152 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-* {
-    /* border: 1px solid black; */
-}
+/* NAVBAR */
 
-/* TOP */
-.top {
+.navBar {
     background-color: white;
-    height: 100px;
+    overflow: hidden;
     position: sticky;
     top: 0;
 }
 
-.nav {
-    list-style-type: none;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-
-.nav li {
+/*Floats each item to the left with padding of 14 & 16 px.
+Removes the underline with text decoration = none.*/
+.navBar a {
     float: right;
-    font-size: 30px;
-    padding: 20px;
-}
-
-
-.nav a,
-.nav a:visited {
-    display: block;
     color: #006699;
-    text-align: center;
     padding: 14px 16px;
-    text-decoration: overline;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 17px;
+    /* font-family: Tahoma; */
 }
 
-.nav a:hover {
-    color: #000000;
+.navBar a:first-child {
+    float: left;
+}
+
+/*Background color change during hover state*/
+.navBar a:hover {
+    /* background-color: white; */
+    color: #666666;
     text-decoration: overline;
 }
 
-/* CARD */
+/*Hides the menu Icon which will show when the nav needs to be responsive*/
+.navBar .icon {
+    display: none;
+}
 
-.background-image {
+/*Set your custom screen width here replacing 700*/
+@media (max-width: 700px) {
+
+    /*Ignores the first link (which is Home) in the div and       applies 'display = none' to everything else.   Basically hiding everything but Home*/
+    .navBar a:not(:first-child) {
+        display: none;
+    }
+
+    /*Brings the menu icon into view and floats it to the right*/
+    .navBar a.icon {
+        display: block;
+        float: right;
+    }
+
+    /*The navBar class will be changed to 'navBar responsive' using JS. This chunk of CSS makes the menu icon stay where it is by making the position absolute within it's parent 'right top corner'. Without this, the icon will get kicked around when the items are collapsed and expanded*/
+    .navBar.responsive {
+        position: relative;
+        position: sticky;
+        top: 0;
+    }
+
+
+    .navBar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /*Removes the originally set float and brings them to view*/
+    .navBar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+/* BUISNESS CARD */
+
+
+.card-bg1 {
+    height: 500px;
+    position: relative;
     background-image: url("header.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right top;
     background-attachment: fixed;
-    height: 500px;
-    position: relative;
     z-index: -1;
 }
 
-.background-color {
-    background-color: #d9d9d9;
-    height: 300px;
+.card-bg2 {
+    height: 400px;
     position: relative;
+    background-color: #d9d9d9;
     z-index: -2;
 }
 
 .card {
-    background-image: linear-gradient(#003380, #d9d9d9);
-    height: 600px;
-    width: 50%;
-    left: 25%;
-    top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    background-color: white;
+    border-radius: 50px;
+    height: 750px;
+    width: 80%;
+    left: 10%;
+    top: 10%;
     z-index: -1;
 }
 
-.card-photo {
-    background-color: none;
-    height: 500px;
-    width: 45%;
-    position: relative;
-    top: 10%;
-    left: 5%;
-    z-index: -1;
+.card-item {
+    max-width: 300px;
+    height: 300px;
+    flex: 50%;
+    padding: 0 4px;
+}
+
+.card-photo img {
+
+    flex: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 .card-text {
-    background-color: none;
-    height: 500px;
-    width: 45%;
-    position: relative;
+    color: #666666;
     text-align: center;
-    top: -73.4%;
-    left: 50%;
-    z-index: -1;
-
 }
 
-.bold {
-    font-weight: 600;
+p span.bold {
+    font-weight: bold;
 }
+
+@media (min-width: 770px) {
+    .card {
+        height: 600px;
+    }
+}
+
 
 /* PROJECTS */
+
+span.achor-span {
+    height: 100px;
+}
 
 .projects {
     background-color: white;
@@ -114,14 +159,136 @@ body {
     z-index: -1;
 }
 
+.projects h2 {
+    font-size: 70px;
+    color: #666666;
+    text-align: center;
+}
+
+.projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+
+}
+
+.projects-row.row2 {
+    flex-wrap: wrap-reverse;
+}
+
+.projects-column {
+    flex: 40%;
+    height: 300px;
+    width: 40%;
+    max-width: 500px;
+    margin: 10% 5% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.projects-column h3, p{
+    text-align: center;
+}
+
+.projects-column i {
+    font-size: 200px;
+    color: black;
+    display: block;
+    margin: 0 auto; 
+}
+
+.projects-column.icon {
+    /* border: 1px solid black; */
+}
+
+.fas.fa-gem {
+    color: #006699;
+}
+
+.fas.fa-carrot {
+    color: orange;
+}
+
+
+@media (max-width: 630px) {
+    .projects-column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+li {
+    
+}
+
 /* EDUCATION */
 
 .education {
     background-color: #d9d9d9;
+    color: #006699;
     min-height: 500px;
     position: relative;
     z-index: -1;
 }
+
+.education h2 {
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+.education-row {
+    display: flex;
+    padding-bottom: 50px; 
+}
+
+.education-column {
+    height: 200px;
+    flex: 50%;
+}
+
+.education-column li {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+.date p {
+    max-width: 150px;
+    float: right;
+    position: relative;
+    top: 8px;
+    right: 16px;
+}
+
+.name p {
+    position: relative;
+    max-width: 300px;
+    top: 0px;
+    left: 0px;
+}
+
+.date {
+    box-sizing: border-box;
+    text-align: right;
+    float: right;
+    margin-left: 15px;
+    padding-left: 10px;
+}
+
+.name {
+    box-sizing: content-box;
+    text-align: center;
+    padding: 0 20px 50px;
+     border-left: 1.5px solid #006699;
+}
+
+.education h2 {
+    font-size: 70px;
+}
+
 
 /* CONTACT */
 
@@ -129,7 +296,6 @@ body {
     background-color: white;
     min-height: 500px;
     position: relative;
-    z-index: -1;
 }
 
 .contact h2 {
@@ -139,10 +305,29 @@ body {
 }
 
 .icon-box {
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
+    justify-content: center;
+    align-items: center;
     top: 10%;
-    left: 30%;
+}
 
+.icon-box>* {
+    text-align: center;
+}
+
+.icon-item {
+
+    flex: 25%;
+    max-width: 25%;
+}
+
+@media (max-width: 630px) {
+    .icon-item {
+        flex: 50%;
+        max-width: 50%;
+    }
 }
 
 .contact i {
@@ -150,6 +335,7 @@ body {
     padding: 40px;
     color: #666666;
 }
+
 
 /* FOOTER */
 
